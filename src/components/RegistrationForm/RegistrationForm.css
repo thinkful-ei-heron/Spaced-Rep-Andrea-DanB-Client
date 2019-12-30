@@ -1,0 +1,23 @@
+form {
+  width: 100%;
+}
+
+input, button {
+  background-color: var(--grey-3);
+  border: 1px solid var(--green-2);
+  color: var(--text-1);
+  padding: .5rem;
+}
+
+input:hover, button:hover {
+  background-color: var(--grey-2);
+  border: 1px solid var(--green-1);
+}
+
+input {
+  margin: 0 0 1rem 0;
+}
+
+button {
+  padding: .3rem .5rem;
+}
