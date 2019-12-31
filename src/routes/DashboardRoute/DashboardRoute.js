@@ -11,7 +11,8 @@ class DashboardRoute extends Component {
     const response = await fetch(`${config.API_ENDPOINT}/language`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
     });
     const {language, words} = await response.json();
