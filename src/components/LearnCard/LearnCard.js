@@ -10,13 +10,16 @@ class LearnCard extends Component {
   }
 
   render() {
+    console.log('cap', this.props)
     const button = () => {
       return (
         <button 
+          type='button'
+          autofocus='true'
           onClick={(e) => this.props.nextWord(e)}
+          autoFocus
         >Try another word!</button>
       )
-      //      return <Button>Try another word!</Button>
     }
     const display = () => {
       if (!this.props) {
@@ -35,7 +38,7 @@ class LearnCard extends Component {
             <div className="DisplayFeedback">
               <p>
                 The correct translation for {this.props.currentWord} was{' '}
-                {this.props.translation} and you chose {this.props.guess}!
+                {this.props.answer} and you chose {this.props.guess}!
               </p>
               {button()}
             </div>

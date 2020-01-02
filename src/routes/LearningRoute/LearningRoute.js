@@ -48,13 +48,10 @@ class LearningRoute extends Component {
   }
 
   makeGuess = async (guess) => {
-    console.log(this.state, this.context)
     const data = JSON.stringify({
-      guess,
-      original: this.state.nextWord,
-      language_id: this.context.language.id,
+      guess
     });
-    console.log('FUN', this.state)
+    console.log('FUN', data)
     const response = await fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {

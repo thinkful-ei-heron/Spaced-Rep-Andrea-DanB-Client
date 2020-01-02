@@ -26,6 +26,7 @@ class GuessInput extends Component {
           onChange={(e) => this.handleChange(e)}
           value={this.state.guess}
           required
+          autoFocus
         />
         <Button type="submit">Submit your answer</Button>
       </form>
