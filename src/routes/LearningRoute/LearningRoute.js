@@ -48,11 +48,13 @@ class LearningRoute extends Component {
   }
 
   makeGuess = async (guess) => {
+    console.log(this.state, this.context)
     const data = JSON.stringify({
       guess,
-      original: this.state.word,
-      language_id: this.context.language.id
+      original: this.state.nextWord,
+      language_id: this.context.language.id,
     });
+    console.log('FUN', data)
     const response = await fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
@@ -63,13 +65,13 @@ class LearningRoute extends Component {
     });
 
     const reply = await response.json();
+    console.log(reply)
 
     await this.setState({
       ...this.state,
       currentWord: this.state.nextWord,
       ...reply
     })
-    await console.log('CONSOLE', this.state)
     //    if (!reply.isCorrect){
     //
     //      console.log("WRONG", reply.isCorrect)
@@ -93,7 +95,6 @@ class LearningRoute extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <section>
         <LearnCard
