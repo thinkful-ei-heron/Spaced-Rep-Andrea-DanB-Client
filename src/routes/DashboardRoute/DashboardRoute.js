@@ -23,11 +23,9 @@ class DashboardRoute extends Component {
 
 
   render() {
-    console.log(this.context)
-    console.log(this.context.words)
     return (
       <section>
-        <Dashboard 
+        <Dashboard
           language = {this.context.language}
           words = {this.context.words}
         />

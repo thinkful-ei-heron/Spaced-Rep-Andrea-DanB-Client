@@ -13,6 +13,11 @@ class LearningRoute extends Component {
       nextWord: '',
       wordCorrectCount: '',
       wordIncorrectCount: '',
+      isCorrect: '',
+      totalScore: '',
+      currentWord: '',
+      answer: '',
+      guess: '',
     };
   }
   componentDidMount() {
@@ -24,7 +29,7 @@ class LearningRoute extends Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+        Authorization: `Bearer ${TokenService.getAuthToken()}`,
       },
     });
     const {
@@ -34,13 +39,53 @@ class LearningRoute extends Component {
       totalScore,
     } = await response.json();
 
-
     this.setState({
       nextWord,
       wordCorrectCount,
       wordIncorrectCount,
-      totalScore
+      totalScore,
     });
+  }
+
+  makeGuess = async guess => {
+    const data = JSON.stringify({guess});
+    const response = await fetch(`${config.API_ENDPOINT}/language/guess`, {
+      method: 'POST',
+      headers: {
+        "content-type": "application/json",
+        "Authorization": `Bearer ${TokenService.getAuthToken()}`,
+      },
+      body: data
+    });
+
+    const reply = await response.json();
+
+    await this.setState({
+      ...this.state,
+      currentWord: this.state.nextWord,
+      ...reply
+    })
+    await console.log('CONSOLE', this.state)
+    //    if (!reply.isCorrect){
+    //
+    //      console.log("WRONG", reply.isCorrect)
+    //    }
+    //    await console.log(reply)
+    //    console.log("REPLY", reply);
+  };
+
+  handleSubmit = (e, guess) => {
+    e.preventDefault();
+    this.makeGuess(guess);
+    this.setState({...this.state, guess: guess})
+  };
+
+  nextWord = (e) => {
+    e.preventDefault();
+    this.setState({
+      ...this.state,
+      isCorrect: ''
+    })
   }
 
   render() {
@@ -52,6 +97,12 @@ class LearningRoute extends Component {
           correct={this.state.wordCorrectCount}
           wrong={this.state.wordIncorrectCount}
           score={this.state.totalScore}
+          handleSubmit={this.handleSubmit}
+          isCorrect={this.state.isCorrect}
+          currentWord={this.state.currentWord}
+          answer={this.state.answer}
+          guess={this.state.guess}
+          nextWord={this.nextWord}
         />
       </section>
     );
