@@ -54,7 +54,7 @@ class LearningRoute extends Component {
       original: this.state.nextWord,
       language_id: this.context.language.id,
     });
-    console.log('FUN', data)
+    console.log('FUN', this.state)
     const response = await fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
@@ -108,6 +108,7 @@ class LearningRoute extends Component {
           answer={this.state.answer}
           guess={this.state.guess}
           nextWord={this.nextWord}
+          translation={this.state.translation}
         />
       </section>
     );

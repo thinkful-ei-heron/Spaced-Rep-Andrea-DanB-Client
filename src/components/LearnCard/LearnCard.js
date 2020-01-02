@@ -35,7 +35,7 @@ class LearnCard extends Component {
             <div className="DisplayFeedback">
               <p>
                 The correct translation for {this.props.currentWord} was{' '}
-                {this.props.answer} and you chose {this.props.guess}!
+                {this.props.translation} and you chose {this.props.guess}!
               </p>
               {button()}
             </div>
