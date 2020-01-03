@@ -14,7 +14,7 @@
   --gold-1: #ccaa14;
 }
 
-a, h1, h2, h3, p, label, span{
+a, h1, h2, h3, p, label, span, input{
   font-family: 'Ibarra Real Nova', serif;
   color: var(--text-1);
 }
@@ -37,4 +37,25 @@ a:visited {
 a:hover {
   text-decoration: none;
   color: var(--green-2);
+}
+
+label {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}
+
+input, button {
+  border-radius: 3px;
+}
+
+input {
+  font-size: 1.2rem;
+  padding: .4rem;
+  width: 80%;
+}
+
+button {
+  padding: .2rem 1rem;
 }

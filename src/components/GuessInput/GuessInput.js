@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Button from '../Button/Button';
+import './GuessInput.css'
 
 class GuessInput extends Component {
   constructor(props) {
