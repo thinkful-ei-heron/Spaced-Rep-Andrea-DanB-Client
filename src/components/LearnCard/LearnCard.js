@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import GuessInput from '../GuessInput/GuessInput';
-import DisplayScore from '../DisplayScore/DisplayScore';
-import DisplayResult from '../DisplayResult/DisplayResult';
-import Button from '../Button/Button';
+import './LearnCard.css';
 
 class LearnCard extends Component {
   constructor(props) {
@@ -10,17 +8,17 @@ class LearnCard extends Component {
   }
 
   render() {
-    console.log('cap', this.props)
+    console.log('cap', this.props);
     const button = () => {
       return (
-        <button 
-          type='button'
-          autofocus='true'
-          onClick={(e) => this.props.nextWord(e)}
-          autoFocus
-        >Try another word!</button>
-      )
-    }
+        <button
+          type="button"
+          onClick={e => this.props.nextWord(e)}
+          autoFocus>
+          Try another word!
+        </button>
+      );
+    };
     const display = () => {
       if (!this.props) {
         return (
@@ -67,14 +65,14 @@ class LearnCard extends Component {
               <p>Your total score is: {this.props.score}</p>
             </div>
             <h2>Translate the word:</h2>
-            <span>{this.props.word}</span>
+            <span className="testWord">{this.props.word}</span>
             <GuessInput handleSubmit={this.props.handleSubmit} />
           </>
         );
       }
     };
     return (
-      <main>
+      <main className="learnCard">
         {display()}
         <p>You have answered this word correctly {this.props.correct} times.</p>
         <p>You have answered this word incorrectly {this.props.wrong} times.</p>

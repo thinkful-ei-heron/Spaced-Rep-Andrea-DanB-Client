@@ -11,15 +11,16 @@
   --green-1: #B5C3AA;
   --green-2: #91A57F;
   --text-1: #262923;
+  --gold-1: #ccaa14;
 }
 
-a, h1, h2, h3, p, label {
+a, h1, h2, h3, p, label, span{
   font-family: 'Ibarra Real Nova', serif;
   color: var(--text-1);
 }
 
 body, html {
-  margin-top: 100px;
+  margin-top: 120px;
   padding: 0;
   background-color: var(--grey-1);
   text-align: center;

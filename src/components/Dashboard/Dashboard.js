@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Word from '../Word/Word'
 import {Link} from 'react-router-dom'
+import './Dashboard.css'
 
 class Dashboard extends Component {
 
@@ -18,7 +19,7 @@ class Dashboard extends Component {
   render(props){
     return (
       <main>
-        <section>
+        <section className="dashboard">
           <h2>{this.props.language.name}</h2>
           <h2>Total correct answers: {this.props.language.total_score}</h2>
           <h3>Words to practice</h3>
@@ -37,7 +38,7 @@ class Dashboard extends Component {
               )
             })}
           </ol>
-          <Link to={'/learn'}>Start practicing</Link>
+          <Link to={'/learn'} className="practice">Start practicing</Link>
         </section>
       </main>
     )

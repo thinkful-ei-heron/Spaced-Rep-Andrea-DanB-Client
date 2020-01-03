@@ -1,0 +1,20 @@
+ol {
+  list-style-type: none;
+  text-align: left;
+}
+
+.dashboard > h2 {
+  font-size: 1.2rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.dashboard > h3 {
+  font-size: 1.1rem;
+}
+
+.practice {
+  font-size: 1.4rem;
+  padding-bottom: 25px;
+  color: var(--gold-1);
+}

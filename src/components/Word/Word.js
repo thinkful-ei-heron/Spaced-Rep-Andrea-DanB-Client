@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Word.css'
 
 class Word extends Component {
   static defaultProps = {
@@ -14,7 +15,7 @@ class Word extends Component {
 
   render(props) {
     return (
-      <div>
+      <div className="word">
         <h4>{this.props.original}</h4>
         <h5>{this.props.translation}</h5>
         <p>correct answer count: {this.props.answer}</p>
