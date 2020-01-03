@@ -2,7 +2,7 @@ ol {
   list-style-type: none;
   text-align: left;
   display: block;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .dashboard > h2 {
@@ -19,5 +19,5 @@ ol {
   font-size: 1.5rem;
   padding-bottom: 25px;
   -webkit-text-stroke: 1px var(--gold-1);
-  -webkit-text-fill-color: gold;
+  -webkit-text-fill-color: white;
 }

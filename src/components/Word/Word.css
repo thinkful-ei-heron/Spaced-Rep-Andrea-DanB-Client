@@ -5,11 +5,10 @@
   padding: 1rem;
   border: 2px solid var(--gold-1);
   border-radius: 5px;
-  
 }
 .word > h4 {
   -webkit-text-stroke: 1px var(--gold-1);
-  -webkit-text-fill-color: gold;
+  -webkit-text-fill-color: white;
   font-size: 1.3rem;
   margin: 0 0 .4rem 0;
 }
