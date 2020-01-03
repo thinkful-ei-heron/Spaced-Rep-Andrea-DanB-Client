@@ -3,6 +3,7 @@ ol {
   text-align: left;
   display: block;
   width: 100%;
+  margin-left: 5%;
 }
 
 .dashboard > h2 {
@@ -20,4 +21,15 @@ ol {
   padding-bottom: 25px;
   -webkit-text-stroke: 1px var(--gold-1);
   -webkit-text-fill-color: white;
+}
+
+@media only screen and (min-width: 600px) {
+  ol {
+    list-style-type: none;
+    text-align: left;
+    display: block;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
