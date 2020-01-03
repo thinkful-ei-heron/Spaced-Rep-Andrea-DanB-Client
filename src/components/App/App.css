@@ -14,7 +14,7 @@
   --gold-1: #ccaa14;
 }
 
-a, h1, h2, h3, p, label, span, input{
+a, h1, h2, h3, p, label, span, input, button, input{
   font-family: 'Ibarra Real Nova', serif;
   color: var(--text-1);
 }
@@ -58,4 +58,10 @@ input {
 
 button {
   padding: .2rem 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  input {
+    width: 475px;
+  }
 }

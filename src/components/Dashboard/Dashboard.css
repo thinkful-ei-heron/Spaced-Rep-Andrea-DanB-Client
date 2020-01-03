@@ -1,6 +1,8 @@
 ol {
   list-style-type: none;
   text-align: left;
+  display: block;
+  margin: 0 auto;
 }
 
 .dashboard > h2 {
@@ -14,7 +16,8 @@ ol {
 }
 
 .practice {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   padding-bottom: 25px;
-  color: var(--gold-1);
+  -webkit-text-stroke: 1px var(--gold-1);
+  -webkit-text-fill-color: gold;
 }

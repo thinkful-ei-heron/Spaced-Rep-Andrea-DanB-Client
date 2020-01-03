@@ -1,8 +1,15 @@
 .word {
+  width: 80%;
   margin-bottom: 1rem;
+  background-color: var(--green-2);
+  padding: 1rem;
+  border: 2px solid var(--gold-1);
+  border-radius: 5px;
+  
 }
 .word > h4 {
-  color: var(--gold-1);
+  -webkit-text-stroke: 1px var(--gold-1);
+  -webkit-text-fill-color: gold;
   font-size: 1.3rem;
   margin: 0 0 .4rem 0;
 }
