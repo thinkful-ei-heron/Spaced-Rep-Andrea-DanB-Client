@@ -8,7 +8,6 @@ class LearnCard extends Component {
   }
 
   render() {
-    console.log('cap', this.props);
     const button = () => {
       return (
         <button

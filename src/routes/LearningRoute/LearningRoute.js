@@ -51,7 +51,6 @@ class LearningRoute extends Component {
     const data = JSON.stringify({
       guess
     });
-    console.log('FUN', data)
     const response = await fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
@@ -62,19 +61,12 @@ class LearningRoute extends Component {
     });
 
     const reply = await response.json();
-    console.log(reply)
 
     await this.setState({
       ...this.state,
       currentWord: this.state.nextWord,
       ...reply
     })
-    //    if (!reply.isCorrect){
-    //
-    //      console.log("WRONG", reply.isCorrect)
-    //    }
-    //    await console.log(reply)
-    //    console.log("REPLY", reply);
   };
 
   handleSubmit = (e, guess) => {
